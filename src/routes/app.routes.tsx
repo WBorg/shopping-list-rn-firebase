@@ -8,12 +8,14 @@ import { Receipts } from '../screens/Receipts';
 import { Products } from '../screens/Products';
 import { Upload } from '../screens/Upload';
 import { Platform } from 'react-native';
+import { SignIn } from './../screens/SignIn/index';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 export function AppRoutes() {
   return (
     <Navigator
+      initialRouteName='signin'
       screenOptions={{
         tabBarActiveTintColor: theme.COLORS.PURPLE,
         tabBarInactiveTintColor: theme.COLORS.GRAY800,
@@ -57,6 +59,19 @@ export function AppRoutes() {
       <Screen
         name="Upload"
         component={Upload}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <MaterialIcons
+              name="backup"
+              size={size}
+              color={color}
+            />
+          )
+        }}
+      />
+      <Screen
+        name="signin"
+        component={SignIn}
         options={{
           tabBarIcon: ({ size, color }) => (
             <MaterialIcons
