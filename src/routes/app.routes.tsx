@@ -9,6 +9,7 @@ import { Products } from '../screens/Products';
 import { Upload } from '../screens/Upload';
 import { Platform } from 'react-native';
 import { SignIn } from './../screens/SignIn/index';
+import {SiginUp} from './../screens/SiginUp/index'
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -81,6 +82,10 @@ export function AppRoutes() {
             />
           )
         }}
+      />
+      <Screen 
+        name="SiginUp"
+        component={SiginUp}
       />
     </Navigator>
   )
